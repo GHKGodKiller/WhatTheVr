@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: e8f50edf819b61b40a9fa22805059ebb
+guid: e08b0241660767544b1c851ad7ba5405
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_DM_Tech
-    second: {fileID: 2100000, guid: 24945adb5ac8d7f49861caf40f7eb312, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_DM_Tech_Gris
-    second: {fileID: 2100000, guid: 035d2f92700b3a44cbe5131b6382eada, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,13 +34,13 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.15
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     preBakeConvexCollisionMesh: 0
-    preBakeTriangleCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 1
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -83,7 +73,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
@@ -107,7 +97,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.15
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
