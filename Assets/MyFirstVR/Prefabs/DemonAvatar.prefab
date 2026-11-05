@@ -105,15 +105,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.153
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.153
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.153
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -157,7 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       propertyPath: m_Name
-      value: demon_avatar
+      value: DemonAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
+      propertyPath: m_TagString
+      value: Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -175,6 +179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1688204631590085109}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8781632651143572669}
   m_SourcePrefab: {fileID: 100100000, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
 --- !u!1 &1175192464947297652 stripped
 GameObject:
@@ -189,7 +196,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175192464947297652}
   serializedVersion: 5
-  m_Mass: 5
+  m_Mass: 0.3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -253,6 +260,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4612661833777920096, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
+--- !u!114 &8781632651143572669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175192464947297652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be46b8dd3b5c54479c1f2bb0cbeb745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Respawnable
 --- !u!4 &1946909631399225294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a33519ce451e6c1499b854a0d545dd8d, type: 3}
