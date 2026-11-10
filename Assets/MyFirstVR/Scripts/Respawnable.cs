@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class Respawnable : MonoBehaviour
 {
+    [Header("Configuración Específica")]
+    [Tooltip("Marca esta casilla SOLO en el objeto del jugador (Camera Rig)")]
+    public bool isPlayer = false;
+    
+    [Tooltip("Coordenadas exactas a donde regresará el jugador al caer")]
+    public Vector3 playerSafePosition = new Vector3(0, 0, 0);
+
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Rigidbody rb;
 
     private void Awake()
     {
-        // Guardamos la posición y rotación exactas donde inicia el objeto/jugador
+        // Guarda la posición original (útil para las pelotas y pinos)
         startPosition = transform.position;
         startRotation = transform.rotation;
         rb = GetComponent<Rigidbody>();
@@ -17,28 +24,30 @@ public class Respawnable : MonoBehaviour
     [ContextMenu("Reaparecer Objeto")]
     public void Respawn()
     {
-        // 1. Si el objeto es el jugador (tiene CharacterController), lo apagamos un instante
-        CharacterController cc = GetComponent<CharacterController>();
-        if (cc != null)
+        // Apaga el Character Controller temporalmente para permitir el teletransporte
+        CharacterController cc = GetComponentInChildren<CharacterController>();
+        if (cc != null) cc.enabled = false; 
+
+        // Si el objeto es el jugador, lo manda a la coordenada fija (ej. 0, 0, 0)
+        if (isPlayer)
         {
-            cc.enabled = false; 
+            transform.position = playerSafePosition;
+        }
+        // Si no es el jugador (pelotas, etc.), regresan a su punto guardado
+        else
+        {
+            transform.position = startPosition;
+            transform.rotation = startRotation;
         }
 
-        // 2. Teletransportamos el objeto a su posición y rotación inicial
-        transform.position = startPosition;
-        transform.rotation = startRotation;
-
-        // 3. Si el objeto tiene físicas (como pelotas o el palo de golf), frenamos su caída
+        // Resetea la inercia de caída si es un objeto físico
         if (rb != null)
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
 
-        // 4. Si era el jugador, volvemos a encender su controlador de movimiento
-        if (cc != null)
-        {
-            cc.enabled = true; 
-        }
+        // Vuelve a encender el Character Controller en la nueva posición
+        if (cc != null) cc.enabled = true; 
     }
 }
